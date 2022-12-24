@@ -89,13 +89,14 @@ public class Customer extends JFrame{
         
         t1.addKeyListener(new KeyAdapter(){
             public void keyReleased(KeyEvent e){
-                String valid = "^[A-Z0-9]{0,9}$";
-                Pattern pattern = Pattern.compile(valid);
-                Matcher match = pattern.matcher(t1.getText());
-                if(!match.matches()){
-                    JOptionPane.showMessageDialog(null,"Code naming is incorrect");
-                    t1.setText(null);
-                }   
+                 char c = e.getKeyChar();
+                 if(Character.isDigit(c) || Character.isISOControl(c))
+                 {
+                     t1.setEditable(true);
+                 }
+                 else{
+                     t1.setEditable(false);
+                 }  
             }
         });
         
@@ -137,18 +138,6 @@ public class Customer extends JFrame{
                 }
             }
         });
-          
-//           t5.addKeyListener(new KeyAdapter(){
-//            public void keyReleased(KeyEvent e){
-//                String valid = "^[a-zA-Z0-9]{0,30}@[a-zA-Z]{0-10}.[a-zA-Z]$";
-//                Pattern pattern = Pattern.compile(valid);
-//                Matcher match = pattern.matcher(t5.getText());
-//                if(!match.matches()){
-//                    JOptionPane.showMessageDialog(null,"email naming is incorrect");
-//                    t5.setText(null);
-//                }   
-//            }
-//        });
         
         submit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ev){

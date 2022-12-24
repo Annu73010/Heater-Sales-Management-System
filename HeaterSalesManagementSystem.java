@@ -11,7 +11,7 @@ public class HeaterSalesManagementSystem {
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
             System.out.println("Driver loaded");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","SYSTEM","hungamaroli01");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","root","root");
             System.out.println("Connection established");
         }
         catch(ClassNotFoundException ex){

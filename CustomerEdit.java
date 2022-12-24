@@ -3,7 +3,6 @@ package heater.sales.management.system;
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.Vector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
